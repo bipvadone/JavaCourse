@@ -9,12 +9,15 @@ public class Doctor {
 	Doctor()
 	{
 		System.out.println("Construyendo doctor");
-		id++;
+		
 	}
 	
-	Doctor(String name)
+	Doctor(String name, String speciality)
 	{
+		id++;
 	   System.out.println("El nombre del doctor asignado es: "+name);	
+	   this.name=name;
+	   this.speciality=speciality;
 	}
 	
 	//comportamientos
