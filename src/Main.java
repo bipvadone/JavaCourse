@@ -1,6 +1,7 @@
 import static ui.UIMenu.*;
 
 import java.io.ObjectInputStream.GetField;
+import java.util.Date;
 
 
 public class Main {
@@ -11,18 +12,22 @@ public class Main {
 		//showMenu();
 		Doctor myDoctor = new Doctor("bip vadone", "cardiology")  ;
 		
-		System.out.println(myDoctor.name);
-		System.out.println(myDoctor.speciality);
+		myDoctor.addAvailableApointment(new Date(), "4pm");
+		myDoctor.addAvailableApointment(new Date(), "10am");
+		myDoctor.addAvailableApointment(new Date(), "1pm");
 		
-		Patient patient =new Patient("wilson","wilson@hotmail.com"); 
-		patient.setWeight(54.6); 
-		System.out.println(patient.getWeight());
+		System.out.println(myDoctor.getAvailableAppointments());
 		
-		patient.setPhoneNumber("12345678");
-		System.out.println(patient.getPhoneNumber());
- 
+		
+		for(Doctor.AvailableAppointment availableAppointment: myDoctor.getAvailableAppointments())
+		{
+			System.out.println(availableAppointment.getDate()+" "+availableAppointment.getTime());
+		}
 		
 
+		Patient patient = new Patient("Bip","bip@gmail.com");
+		
+		System.out.println(patient);
 		
 		
 	}
